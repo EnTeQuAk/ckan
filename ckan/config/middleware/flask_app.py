@@ -208,7 +208,8 @@ def ckan_after_request(response):
 
 def helper_functions():
     u'''Make helper functions (`h`) available to Flask templates'''
-    helpers.load_plugin_helpers()
+    #XXX (cgrebs) Disabled to avoid weird reload-behaviors we noticed
+    # helpers.load_plugin_helpers()
     return dict(h=helpers.helper_functions)
 
 
